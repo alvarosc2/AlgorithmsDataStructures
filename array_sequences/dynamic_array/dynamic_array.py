@@ -21,7 +21,7 @@ class DynamicArray(object):
         if self.n == self.capacity:
             self._resize(2 * self.capacity)
 
-        self.A(self.n)
+        self.A[self.n] = ele
         self.n += 1
 
     def _resize(self, new_cap):
@@ -34,4 +34,4 @@ class DynamicArray(object):
         self.capacity = new_cap
 
     def make_array(self, new_cap):
-        return (new_cap * ctypes.py_object())
+        return (new_cap * ctypes.py_object)()
