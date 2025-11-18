@@ -17,11 +17,11 @@ class DynamicArray(object):
         
         return self.A[k]
     
-    def append(self, ele):
+    def append(self, element):
         if self.n == self.capacity:
             self._resize(2 * self.capacity)
 
-        self.A[self.n] = ele
+        self.A[self.n] = element
         self.n += 1
 
     def _resize(self, new_cap):
