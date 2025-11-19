@@ -23,11 +23,12 @@ def anagram_check(str1, str2):
         
     # compare both dictionaries, sames keys and same values
     if dict1 == dict2:
-        return 'son iguales'
+        return True
     else:
-        return 'No son iguales'
+        return False
 
 def anagram_check2(str1, str2):
+    # each position represents one letter of the alphabet
     arr1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     arr2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -35,18 +36,28 @@ def anagram_check2(str1, str2):
     result1 = str1.lower().replace(' ', '')
     result2 = str2.lower().replace(' ', '')
     
-    
     for char in result1:
         arr1[ord(char) - 97] += 1
     
     for char in result2:
         arr2[ord(char) - 97] += 1
 
-    if result1 == result2:
-        return 'son iguales'
+    if compare_arrays(result1, result2) == True:
+        return True
     else:
-        return 'No son iguales'
+        return False
 
-resultado = anagram_check2('Clint Eastwood', 'anagram')
-print(resultado)
-
+def compare_arrays(arr1, arr2):
+    # if the length of both arrays are different then the
+    # arrays are not equal
+    if len(arr1) != len(arr2):
+        return False
+    
+    # compare both arrays element by element. They are 
+    # equal if each element of arr1 is equal to each 
+    # element of arr2
+    for i in range(len(arr1)):
+        if arr1[i] != arr2[i]:
+            return False
+        
+    return True
