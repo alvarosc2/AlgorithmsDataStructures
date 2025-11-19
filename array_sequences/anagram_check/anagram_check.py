@@ -27,5 +27,26 @@ def anagram_check(str1, str2):
     else:
         return 'No son iguales'
 
-resultado = anagram_check('Clint Eastwood', 'anagram')
+def anagram_check2(str1, str2):
+    arr1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    arr2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    # the whole string in lowercase and without spaces
+    result1 = str1.lower().replace(' ', '')
+    result2 = str2.lower().replace(' ', '')
+    
+    
+    for char in result1:
+        arr1[ord(char) - 97] += 1
+    
+    for char in result2:
+        arr2[ord(char) - 97] += 1
+
+    if result1 == result2:
+        return 'son iguales'
+    else:
+        return 'No son iguales'
+
+resultado = anagram_check2('Clint Eastwood', 'anagram')
 print(resultado)
+
