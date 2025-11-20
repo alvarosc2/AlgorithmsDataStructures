@@ -33,16 +33,30 @@ def anagram_check2(str1, str2):
     arr2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     # the whole string in lowercase and without spaces
-    result1 = str1.lower().replace(' ', '')
-    result2 = str2.lower().replace(' ', '')
+    str1 = str1.lower().replace(' ', '')
+    str2 = str2.lower().replace(' ', '')
     
-    for char in result1:
+    for char in str1:
         arr1[ord(char) - 97] += 1
     
-    for char in result2:
+    for char in str2:
         arr2[ord(char) - 97] += 1
 
-    if compare_arrays(result1, result2) == True:
+    if compare_arrays(arr1, arr2) == True:
+        return True
+    else:
+        return False
+    
+def anagram_check3(str1, str2):
+    # the whole string in lowercase and without spaces
+    str1 = str1.lower().replace(' ', '')
+    str2 = str2.lower().replace(' ', '')
+
+    # the string will be sorted and then compared
+    str1 = sorted(str1)
+    str2 = sorted(str2)
+
+    if str1 == str2:
         return True
     else:
         return False
