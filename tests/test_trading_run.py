@@ -1,5 +1,5 @@
 import pytest
-from trading_run import volado
+from ..trading_model.trading_run import volado
 
 def test_volado_returns_valid_result():
     result = volado()

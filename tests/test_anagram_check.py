@@ -1,11 +1,5 @@
 import pytest
-import sys
-from pathlib import Path
-
-# Add parent directory to path to import anagram_check module
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from anagram_check import *
+from ..array_sequences.anagram_check import anagram_check, anagram_check2, anagram_check3, compare_arrays
 
 class TestAnagramCheck:
     def test_anagram_check_is_anagram(self):
