@@ -1,12 +1,10 @@
 def array_pair_sum(arr, k):
     perm = []
-
     for i in range(len(arr)):
-        for j in range(len(arr)):
-            if i == j:
-                continue
-            else:
-                perm.append((arr[i], arr[j]))
+        j = i + 1
+        while j < len(arr):
+            perm.append((arr[i], arr[j]))
+            j += 1
 
     result = []
     for i in range(len(perm)):
