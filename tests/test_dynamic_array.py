@@ -12,7 +12,7 @@ The tests cover edge cases like empty arrays, out-of-bounds access, negative ind
 '''
 
 import pytest
-from ..array_sequences.dynamic_array import DynamicArray
+from ..10_array_sequences.dynamic_array import DynamicArray
 
 class TestDynamicArrayInit:
     """Test initialization of DynamicArray"""
