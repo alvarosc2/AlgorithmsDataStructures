@@ -1,5 +1,5 @@
 import pytest
-from ..array_sequences.anagram_check import anagram_check, anagram_check2, anagram_check3, compare_arrays
+from ..10_array_sequences.anagram_check import anagram_check, anagram_check2, anagram_check3, compare_arrays
 
 class TestAnagramCheck:
     def test_anagram_check_is_anagram(self):
