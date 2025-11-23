@@ -1,5 +1,5 @@
 import pytest
-from ..10_array_sequences.array_pair_sum import array_pair_sum
+from ..section_10_array_sequences.array_pair_sum import array_pair_sum
 
 class TestArrayPairSum:
     def test_array_pair_sum(self):
