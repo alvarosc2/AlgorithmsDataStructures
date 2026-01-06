@@ -1,20 +1,20 @@
-from tip_calculator import tip_calculator
+from tip_calculator import tip_calculator, get_positive_float, get_positive_integer
 
-try:
-    total_bill: float = 0.0
-    tip_percentage: float = 0.0
-    people_to_split: int = 1
-    amount_per_person: float = 0.0
-
+def main():
     print("Welcome to the tip calculator!")
-    total_bill = float(input("What was the total bill? $ "))
-    tip_percentage = float(input("How much tip would you like to give? 10, 12, 15, or 20? "))
-    people_to_split = int(input("How many people to split the bill? "))
-
+    
+    # Validar entrada de la cuenta total (float positivo)
+    total_bill = get_positive_float("What was the total bill? $ ")
+    
+    # Validar entrada del porcentaje de propina (float positivo)
+    tip_percentage = get_positive_float("How much tip would you like to give? 10, 12, 15, or 20? ")
+    
+    # Validar entrada de personas (entero positivo mayor a cero)
+    people_to_split = get_positive_integer("How many people to split the bill? ")
+    
+    # Calcular y mostrar resultado
     amount_per_person = tip_calculator(total_bill, tip_percentage, people_to_split)
-
     print(f"Each person should pay: $ {amount_per_person}")
-except ValueError as e:
-    print("You should enter a number, please try again.")
-except ZeroDivisionError as e:
-    print("Who is going to pay the bill? at least one person should be paying.")
+
+if __name__ == "__main__":
+    main()
