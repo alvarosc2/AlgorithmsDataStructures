@@ -9,10 +9,27 @@ def get_player_choice():
     choice = input("Enter your choice (rock, paper, scissors): ").lower()
     while choice not in ['rock', 'paper', 'scissors']:
         choice = input("Invalid choice. Please enter rock, paper, or scissors: ").lower()
+    
+    if choice == 'rock':
+        print_rock()
+    elif choice == 'paper':
+        print_paper()
+    else:
+        print_scissors()
+
     return choice
 
 def get_cpu_choice():
-    return random.choice(['rock', 'paper', 'scissors'])
+    choice = random.choice(['rock', 'paper', 'scissors'])
+
+    if choice == 'rock':
+        print_rock()
+    elif choice == 'paper':
+        print_paper()
+    else:
+        print_scissors()
+
+    return choice
 
 def determine_winner(player_choice, cpu_choice):
     if player_choice == cpu_choice:
@@ -44,11 +61,41 @@ def play_round():
     matches_played += 1
     print(f"Score - You: {match[0]['score']} | CPU: {match[1]['score']} | Matches Played: {matches_played}")
 
+def print_paper():
+    print("""
+       _______
+    ---'   ___)_____
+              ______)
+            _________)
+          (_________)
+    ---.__(_______)
+
+    """)
+
+def print_rock():
+    print("""
+       _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+    """)
+
+def print_scissors():
+    print("""
+       _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+    """)
+
 def main():
     print("Welcome to Rock, Paper, Scissors!")
     while True:
         play_round()
-        print(match)
         again = input("Do you want to play another round? (yes/no): ").lower()
         if again != 'yes':
             print("Thanks for playing!")
